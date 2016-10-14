@@ -1,0 +1,90 @@
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+body {
+	font-family: 'Open Sans', Tahoma, Verdana, Arial, sans-serif;
+	text-align: center;
+}
+
+/* --- Home --- */
+#home-page {
+	background-image:url('../images/poulet.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+#home-titre h1 {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 50px;
+	letter-spacing: 5px;
+	text-shadow: 0 1px 0 #ccc,
+	0 2px 0 #c9c9c9,
+	0 3px 0 #bbb,
+	0 4px 0 #b9b9b9,
+	0 5px 0 #aaa,
+	0 6px 1px rgba(0,0,0,.1),
+	0 0 5px rgba(0,0,0,.1),
+	0 1px 3px rgba(0,0,0,.3),
+	0 3px 5px rgba(0,0,0,.2),
+	0 5px 10px rgba(0,0,0,.25);
+}
+
+#home-titre #poulet {
+	text-align: left;
+}
+
+#home-titre #army {
+	text-align: right;
+}
+
+#home-formulaire label {
+	display: block;
+	text-align: left;
+}
+
+#home-formulaire input {
+	width: 100%;
+}
+
+#home-formulaire button {
+	width: 100%;
+
+	font-weight: bold;
+
+	background: #00c6ff;
+	background: -webkit-linear-gradient(to bottom, #00c6ff , #0072ff);
+	background: linear-gradient(to bottom, #00c6ff , #0072ff);
+}
+
+/* --- Other --- */
+.centrer {
+	margin: auto;
+}
+
+.alert {
+	word-wrap: break-word;
+}
+
+/* --- Desktop --- */
+@media only screen and (min-width: 1024px) {
+	div[data-role="page"] > *[data-role="header"],
+	div[data-role="page"] > *[data-role="footer"] {
+		width: 400px !important;
+		left: 50%;
+		margin-left: -200px;
+	}
+
+	div[data-role="page"] {
+		width: 400px !important;
+		left: -200px !important;
+		margin-left: 50%;
+	}
+
+	.ui-navbar li:last-child .ui-btn {
+		margin-right: 0;
+	}
+}

@@ -1,0 +1,146 @@
+/* --- En plus de home.css --- */
+
+/* --- Game [General] --- */
+#game-icon-deconnexion {
+	float: left;
+	margin-left: 5px;
+	margin-right: -5px;
+	background-color: red;
+}
+
+#game-icon-home {
+	background-color: #0072ff;
+}
+
+.texte-rouge {
+	color: red;
+}
+
+.game-table-header {
+	background: #F1F1F1;
+}
+.game-table-header th {
+	text-align: center;
+}
+
+.game-image-poulet {
+	width: 75px;
+	height: 130px;
+}
+
+a.normal {
+	font-weight: normal;
+}
+
+/* --- Bouton --- */
+.game-bouton-orange {
+	background: #F09819;
+	background: -webkit-linear-gradient(to top, #FF512F , #F09819);
+	background: linear-gradient(to top, #FF512F , #F09819);
+}
+
+.game-bouton-violet {
+	background: #9733EE;
+	background: -webkit-linear-gradient(to top, #9733EE , #DA22FF);
+	background: linear-gradient(to top, #9733EE , #DA22FF);
+}
+
+.game-bouton-gris {
+	background: #4CA1AF;
+	background: -webkit-linear-gradient(to top, #4CA1AF , #C4E0E5);
+	background: linear-gradient(to top, #4CA1AF , #C4E0E5);
+}
+
+.game-bouton-jaune {
+	background: #ffb347;
+	background: -webkit-linear-gradient(to top, #ffb347 , #ffcc33);
+	background: linear-gradient(to top, #ffb347 , #ffcc33);    
+}
+
+.game-bouton-bleu {
+	background: #00c6ff;
+	background: -webkit-linear-gradient(to top, #0072ff, #00c6ff);
+	background: linear-gradient(to top, #0072ff , #00c6ff);             
+}
+
+.ui-btn.game-bouton-orange,
+.ui-btn.game-bouton-violet,
+.ui-btn.game-bouton-gris,
+.ui-btn.game-bouton-jaune,
+.ui-btn.game-bouton-bleu {
+	text-shadow: initial;
+}
+
+.button-link:hover {
+	text-decoration: none;
+}
+
+/* --- Game [HomePage] --- */
+#game-bouton-mission {
+	width: 48%;
+	float: left;
+	margin-right: 5px;
+}
+
+#game-bouton-attaque {
+	width: 48%;
+	float: right;
+	margin-left: 5px;
+}
+
+/* --- Game [Poulailler] --- */
+.game-poulailler-sous-tableau {
+	width: 100%;
+}
+
+.game-poulailler-nom,
+.game-poulailler-attaque,
+.game-poulailler-defense,
+.game-poulailler-prix {
+	font-weight: bold;
+}
+
+.game-poulailler-maximum {
+	color: red;
+}
+
+#game-poulailler-formulaire button{
+	background: #F09819;
+	background: -webkit-linear-gradient(to top, #FF512F , #F09819);
+	background: linear-gradient(to top, #FF512F , #F09819);
+}
+
+/* --- Game [Classement] --- */
+#game-classement-position-1 {
+	font-size: 175%;
+}
+#game-classement-position-2 {
+	font-size: 150%;
+}
+#game-classement-position-3 {
+	font-size: 125%;
+}
+.game-classement-pseudo {
+	max-width: 145px;
+	word-wrap: break-word;
+}
+
+/* --- Game [Mission] --- */
+#game-mission-titre {
+	font-style: italic;
+}
+
+/* --- Game [Attaque] --- */
+#game-attaque-bouton-rapport {
+	width: 38%;
+	margin: auto;
+}
+
+#game-attaque-table {
+	text-align: center;
+}
+
+/* --- jQuery Edits --- */
+.bouton-sans-marge {
+	margin: 0px 0px 0px 0px;
+}
