@@ -9,7 +9,7 @@
 
 <?php
 	if (isset($cookieDisabled) && $cookieDisabled == true) {
-		echo '<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign"></span> Cookies désactivés.<br>Le jeu nécéssite l\'activation des cookies.</div>';
+		echo '<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign"></span> Cookies désactivés.<br>Le jeu nécéssite l\'activation des cookies.<br>Réactualisez la page.</div>';
 	}
 	if (!empty($_SESSION['message']['error'])) {
 		foreach ($_SESSION['message']['error'] as $key => $value) {

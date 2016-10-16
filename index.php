@@ -40,6 +40,9 @@ if(isset($_SERVER['REQUEST_METHOD'])) {
 			case 'or':
 				require_once('controllers/or.php');
 				break;
+			case 'account':
+				require_once('controllers/account.php');
+				break;
 			case 'poulailler':
 				require_once('controllers/poulailler.php');
 				break;
@@ -105,6 +108,9 @@ if(isset($_SERVER['REQUEST_METHOD'])) {
 				break;
 			case 'attaque-rapport':
 				require_once('actions/attaque-rapport.php');
+				break;
+			case 'account':
+				require_once('actions/account.php');
 				break;
 			default:
 				require_once($defaut);

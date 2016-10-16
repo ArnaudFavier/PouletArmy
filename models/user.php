@@ -280,11 +280,24 @@ class User {
 	 * Retourne des informations sur le joueur $idUser passé en paramètre
 	 */
 	public static function getInformations($idUser) {
-		$query = 'SELECT id, pseudo, point FROM ' . Config::DB_TABLE_PREFIX . 'user WHERE id=:id;';
+		$query = 'SELECT id, pseudo, point, inscription FROM ' . Config::DB_TABLE_PREFIX . 'user WHERE id=:id;';
 		$result = Database::select($query, [
 			[':id', $idUser, 'INT']
 		]);
 		
+		return $result;
+	}
+
+	/*
+	 * Met à jour le mot de passe $password de l'utilisateur $id en base de données
+	 */
+	public static function updatePassword($idUser, $password) {
+		$query = 'UPDATE ' . Config::DB_TABLE_PREFIX . 'user SET password=:password WHERE id=:idUser;';
+		$result = Database::update($query, [
+			[':idUser', $idUser, 'INT'],
+			[':password', $password, 'STR']
+		]);
+
 		return $result;
 	}
 

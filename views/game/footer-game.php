@@ -3,6 +3,7 @@
 			<a href="deconnexion" id="game-icon-deconnexion" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext">Déconnexion</a>
 			<a href="help" class="ui-btn ui-mini">Aide</a>
 			<a href="about" class="ui-btn ui-mini">À propos</a>
+			<a href="account" id="game-icon-account" class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext">Compte</a>
 		</div><!-- div footer -->
 
 		<!-- JavaScript dans la page pour être rechargé à chaque changement de page -->

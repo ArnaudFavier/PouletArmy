@@ -1,17 +1,6 @@
 /* --- En plus de home.css --- */
 
 /* --- Game [General] --- */
-#game-icon-deconnexion {
-	float: left;
-	margin-left: 5px;
-	margin-right: -5px;
-	background-color: red;
-}
-
-#game-icon-home {
-	background-color: #0072ff;
-}
-
 .texte-rouge {
 	color: red;
 }
@@ -30,6 +19,29 @@
 
 a.normal {
 	font-weight: normal;
+}
+
+/* - Header - */
+#game-icon-home {
+	background-color: #0072ff;
+}
+
+/* - Footer - */
+.ui-footer {
+	border-width: 1px 1px;
+}
+
+#game-icon-deconnexion {
+	float: left;
+	margin-left: 5px;
+	margin-right: -5px;
+	background-color: red;
+}
+
+#game-icon-account {
+	float: right;
+	margin-left: -5px;
+	margin-right: 5px;
 }
 
 /* --- Bouton --- */
