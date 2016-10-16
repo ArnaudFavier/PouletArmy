@@ -7,6 +7,7 @@
 	<h6>La gestion de vos informations.</h6>
 	<h3><?php echo $view['pseudo']; ?></h3>
 	<h5>Joue depuis <?php echo $view['nombreJourInscription']; ?> jour<?php if($view['nombreJourInscription']){echo 's';} ?>.</h5>
+	<br>
 	<h3>Modifier le mot de passe</h3>
 	<form method="POST" action="account">
 		<label for="password">Nouveau mot de passe</label>
