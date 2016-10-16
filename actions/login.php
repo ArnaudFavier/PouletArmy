@@ -73,6 +73,10 @@ if ($user == null || empty($user)) {
 	Tools::message(Tools::TYPE_MESSAGE['Error'], 'Connexion impossible : merci de réssayer.<br>Sinon contacter l\'administrateur.');
 }
 
+// Stockage dans le cookie de pseudo
+Tools::setPseudoLastPlayerCookie($user->pseudo);
+
+// Stockage en session
 $_SESSION['user'] = serialize($user);
 
 // Message de bienvenue

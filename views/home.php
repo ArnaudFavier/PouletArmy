@@ -28,7 +28,7 @@
 <div id="home-formulaire">
 	<form action="login" method="POST">
 		<label for="pseudo">Pseudo</label>
-		<input name="pseudo" id="pseudo" class="form-control" type="text">
+		<input name="pseudo" id="pseudo" class="form-control" type="text" <?php if(isset($view['pseudoLastPlayer']) && !empty($view['pseudoLastPlayer'])) { echo 'value="' . $view['pseudoLastPlayer'] . '" ';} ?>>
 		<br>
 		<label for="password">Mot de passe</label>
 		<input name="password" id="password" class="form-control" type="password">

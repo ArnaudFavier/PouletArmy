@@ -29,7 +29,7 @@ class Tools {
 
  	/*
 	 |------------------------------
-	 | Forms : Traitement des formulaires
+	 | Forms : Gestion des formulaires
 	 |------------------------------
 	 */
 
@@ -50,6 +50,24 @@ class Tools {
 		$input = htmlspecialchars($input);
 		
 		return $input;
+	}
+
+	/*
+	 * Créé le cookie de stockage du pseudo du joueur passé en paramètre
+	 */
+	public static function setPseudoLastPlayerCookie($pseudo) {
+		setcookie('cookie_pseudo', $pseudo, time() + (3*24*60*60)); // Durée de cookie : 3 jour
+	}
+
+	/*
+	 * Retourne le pseudo du dernier joueur connecté sur le périphérique, ou false
+	 */
+	public static function getPseudoLastPlayerCookie() {
+		if (isset($_COOKIE['cookie_pseudo'])) {
+			return $_COOKIE['cookie_pseudo'];
+		} else {
+			return false;
+		}
 	}
 
 	/*
