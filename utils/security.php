@@ -27,18 +27,18 @@ class Security {
 	 */
 	public static function createSecurityCookie() {
 		if (!self::existSecurityCookie()) {
-			setcookie('cookie_security', 0, time() + (3*24*60*60)); // Durée de cookie : 3 jour
+			setcookie('cookie_security', 0, time() + (5*24*60*60)); // Durée de cookie : 5 jour
 		}
 	}
 
 	/*
-	 *
+	 * Test si la création de compte est supérieure à la limite autorisée (true), sinon l'augmente de un (false)
 	 */
 	public static function inscriptionCounterExceed() {
 		if ($_COOKIE['cookie_security'] >= Rules::SECURITY_INSCRIPTION_MAX) {
 			return true;
 		} else {
-			setcookie('cookie_security', $_COOKIE['cookie_security'] + 1, time() + (3*24*60*60)); // Durée de cookie : 3 jour
+			setcookie('cookie_security', $_COOKIE['cookie_security'] + 1, time() + (5*24*60*60)); // Durée de cookie : 5 jour
 			return false;
 		}
 	}
