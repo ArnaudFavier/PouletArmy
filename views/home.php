@@ -38,6 +38,8 @@
 	</form>
 </div>
 
+<div class="alert alert-warning" role="alert">Nouveauté : la météo lors des attaques !</div>
+
 <div id="home-description" class="panel panel-default">
 	<div class="panel-body">
 		<p><strong>Poulet Army</strong> est un jeu stratégique de combats de poulets.</p>

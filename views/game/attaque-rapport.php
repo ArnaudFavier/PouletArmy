@@ -7,6 +7,11 @@
 	<p>Attaque contre <strong><?php echo $view['joueur']['pseudo']; ?></strong></p>
 	<br>
 	<p>Le <?php echo $view['rapport']['date']; ?> à <?php echo $view['rapport']['heure']; ?></p>
+	<?php if (!empty($view['rapport']['meteo'])) { ?>
+		<h5>Météo lors de l'attaque :</h5>
+		<img src="views/images/weather/<?php echo $view['rapport']['meteo']; ?>.png" alt="Météo" width="100" height="100">
+		<h6>La météo influe sur l'efficacité des poulets de l'attaquant.</h6>
+	<?php } ?>
 	<table id="game-attaque-table" class="table">
 		<tr class="game-table-header">
 			<th>Attaquant</th>

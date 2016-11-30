@@ -39,6 +39,7 @@ class Attaque {
 		$rapport['message'] = '';
 		$rapport['pouletsAttaquant'] = $pouletsAttaquant;
 		$rapport['vainqueur'] = '?';
+		$rapport['meteo'] = 0;
 
 		/* Initialisation des variables de retour du rapport */
 		$rapport['date'] = date('j/m/Y');
@@ -89,6 +90,17 @@ class Attaque {
 		$aleatoireDiminutionAttaque = rand(0, Rules::ATTAQUE_ALEATOIRE_MAX);
 		$puissanceAttaqueAttaquant -= $puissanceAttaqueAttaquant * ($aleatoireDiminutionAttaque / 100);
 		$puissanceAttaqueAttaquant = intval(round($puissanceAttaqueAttaquant));
+
+		// Image de la météo associée à la diminution d'attaque
+		if ($aleatoireDiminutionAttaque < 1 * (Rules::ATTAQUE_ALEATOIRE_MAX / 4)) {
+			$rapport['meteo'] = 1;
+		} elseif ($aleatoireDiminutionAttaque < 2 * (Rules::ATTAQUE_ALEATOIRE_MAX / 4)) {
+			$rapport['meteo'] = 2;
+		} elseif ($aleatoireDiminutionAttaque < 3 * (Rules::ATTAQUE_ALEATOIRE_MAX / 4)) {
+			$rapport['meteo'] = 3;
+		} else {
+			$rapport['meteo'] = 4;
+		}
 
 		// Calcul de la puissance d'attaque du défenseur (contre-attaque)
 		$puissanceAttaqueDefenseur = 0;
