@@ -92,11 +92,11 @@ class Attaque {
 		$puissanceAttaqueAttaquant = intval(round($puissanceAttaqueAttaquant));
 
 		// Image de la météo associée à la diminution d'attaque
-		if ($aleatoireDiminutionAttaque < 1 * (Rules::ATTAQUE_ALEATOIRE_MAX / 4)) {
+		if ($aleatoireDiminutionAttaque < 1 * (round(Rules::ATTAQUE_ALEATOIRE_MAX / 4))) {
 			$rapport['meteo'] = 1;
-		} elseif ($aleatoireDiminutionAttaque < 2 * (Rules::ATTAQUE_ALEATOIRE_MAX / 4)) {
+		} elseif ($aleatoireDiminutionAttaque < 2 * (round(Rules::ATTAQUE_ALEATOIRE_MAX / 4))) {
 			$rapport['meteo'] = 2;
-		} elseif ($aleatoireDiminutionAttaque < 3 * (Rules::ATTAQUE_ALEATOIRE_MAX / 4)) {
+		} elseif ($aleatoireDiminutionAttaque < 3 * (round(Rules::ATTAQUE_ALEATOIRE_MAX / 4))) {
 			$rapport['meteo'] = 3;
 		} else {
 			$rapport['meteo'] = 4;
