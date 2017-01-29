@@ -30,6 +30,8 @@ class Attaque {
 		$poucentagePillageGraine = rand(Rules::ATTAQUE_PILLAGE_MIN, Rules::ATTAQUE_PILLAGE_MAX) / 100.0;
 
 		// Récupération des ressources
+		Ressource::update($idVictime);
+		Ressource::update($idPilleur);
 		$ressourcesVictime = Ressource::get($idVictime);
 		$ressourcesPilleur = Ressource::get($idPilleur);
 
