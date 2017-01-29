@@ -17,7 +17,7 @@
 	<!-- All images remain property of their original owners. -->
 	<h5><i>Toutes les images sont la propriété de leurs auteurs d'origine.</i></h5>
 	<br>
-	<h3><a href="http://fr.wikipedia.org/wiki/Poule_de_Bresse" target="_blank"><img src="views/images/poulet.png" alt="Poulet" width="100px" height="100px"></a></h3>
+	<h3><a href="https://fr.wikipedia.org/wiki/Poule_de_Bresse" target="_blank"><img src="views/images/poulet.png" alt="Poulet" width="100px" height="100px"></a></h3>
 	<br>
 	<a href="javascript:history.go(-1)" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext centrer">Retour</a>
 </div>

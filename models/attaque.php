@@ -2,6 +2,7 @@
 
 require_once('poulet.php');
 require_once('user.php');
+require_once('ressource.php');
 require_once('utils/tools.php');
 require_once('params/rules.php');
 
@@ -19,6 +20,65 @@ class Attaque {
 	 | Fonctions statiques
 	 |------------------------------
 	 */
+
+	/*
+	 * Effectue un transfert de ressources de $idVictime vers $idPilleur
+	 */
+	public static function pillageRessources($idPilleur, $idVictime) {
+		// Pourcentage pillé
+		$poucentagePillageBois = rand(Rules::ATTAQUE_PILLAGE_MIN, Rules::ATTAQUE_PILLAGE_MAX) / 100.0;
+		$poucentagePillageGraine = rand(Rules::ATTAQUE_PILLAGE_MIN, Rules::ATTAQUE_PILLAGE_MAX) / 100.0;
+
+		// Récupération des ressources
+		$ressourcesVictime = Ressource::get($idVictime);
+		$ressourcesPilleur = Ressource::get($idPilleur);
+
+		// Calcul valeur du pillage
+		$boisPille = floor($poucentagePillageBois * $ressourcesVictime['bois']);
+		$grainePille = floor($poucentagePillageGraine * $ressourcesVictime['graine']);
+
+		// Vérifie si les maximums ne sont pas dépassés. Si oui, pille uniquement la différence
+		$pilleurBoisMax = Rules::boisMaximum($ressourcesPilleur['depot']);
+		$pilleurNouveauBois = $ressourcesPilleur['bois'] + $boisPille;
+		if ($pilleurNouveauBois > $pilleurBoisMax) {
+			$boisPille = $pilleurBoisMax - $ressourcesPilleur['bois'];
+			$pilleurNouveauBois = $pilleurBoisMax;
+		}
+		$pilleurGraineMax = Rules::graineMaximum($ressourcesPilleur['entrepot']);
+		$pilleurNouvelleGraine = $ressourcesPilleur['graine'] + $grainePille;
+		if ($pilleurNouvelleGraine > $pilleurGraineMax) {
+			$grainePille = $pilleurGraineMax - $ressourcesPilleur['graine'];
+			$pilleurNouvelleGraine = $pilleurGraineMax;
+		}
+
+		// Retrait des ressources à la victime
+		$victimeNouveauBois = $ressourcesVictime['bois'] - $boisPille;
+		if ($victimeNouveauBois < 0) {
+			$victimeNouveauBois = 0;
+		}
+		$victimeNouvelleGraine = $ressourcesVictime['graine'] - $grainePille;
+		if ($victimeNouvelleGraine < 0) {
+			$victimeNouvelleGraine = 0;
+		}
+
+		// Affectation des nouvelles ressources
+		$nouvellesRessourcesVictime = array(
+			'bois' => $victimeNouveauBois,
+			'graine' => $victimeNouvelleGraine
+		);
+		$nouvellesRessourcesPilleur = array(
+			'bois' => $pilleurNouveauBois,
+			'graine' => $pilleurNouvelleGraine
+		);
+
+		Ressource::modify($idVictime, $nouvellesRessourcesVictime);
+		Ressource::modify($idPilleur, $nouvellesRessourcesPilleur);
+
+		return array(
+				'boisPille' => $boisPille,
+				'grainePille' => $grainePille
+			);
+	}
 
 	/*
 	 * Lance l'attaque entre les joueurs $idAttaquant et $idDefenseur passés en paramètre.
@@ -61,6 +121,7 @@ class Attaque {
 		// Si le défenseur n'a pas d'armée
 		if (empty($pouletsDefenseur)) {
 			$rapport['message'] = 'Pas de défense adverse.';
+			$rapport['message'] .= '<br>Pas de ressources pillées.';
 			$rapport['vainqueur'] = User::getInformations($idAttaquant)['pseudo'];
 			return $rapport;
 		}
@@ -74,6 +135,7 @@ class Attaque {
 		}
 		if ($nombrePouletsDefenseur == 0) {
 			$rapport['message'] = 'Pas de défense adverse.';
+			$rapport['message'] .= '<br>Pas de ressources pillées.';
 			$rapport['vainqueur'] = User::getInformations($idAttaquant)['pseudo'];
 			return $rapport;
 		}
@@ -259,12 +321,17 @@ class Attaque {
 		$rapport['pouletsAttaquant'] = $newPouletsAttaquant;
 
 		/* - Génération du rapport (à retourner) - */
-		$rapport['message'] .= 'Ce fut un combat sanglant. De nombreux poulets perdirent des plumes. Les crètes volèrent en éclats.';
+		$rapport['message'] .= 'Ce fut un combat sanglant. De nombreux poulets perdirent des plumes.';
+		$rapport['message'] .= '<br>Les crètes volèrent en éclats.';
 
 		// Détermination du vainqueur
 		if ($nombrePouletsMortsAttaquant > $nombrePouletsMortsDefenseur) {
 			// Attaquant
 			$rapport['vainqueur'] = User::getInformations($idAttaquant)['pseudo'];
+			$ressourcesPilles = Attaque::pillageRessources($idAttaquant, $idDefenseur);
+			$rapport['message'] .= '<br><br>Des ressources ont été pillées :';
+			$rapport['message'] .= '<br><strong>' . $ressourcesPilles['boisPille'] . '</strong> bois et <strong>' . $ressourcesPilles['grainePille'] . '</strong> graine' . ($ressourcesPilles['grainePille'] > 1 ? 's' : '') . '.';
+			Ressource::getIntoSession();
 		} elseif ($nombrePouletsMortsAttaquant == $nombrePouletsMortsDefenseur) {
 			// Egalité
 			$rapport['vainqueur'] = 'Pas de vainqueur, les pertes sont identiques.';

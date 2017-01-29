@@ -35,6 +35,8 @@ class Rules {
 	/* Attaque */
 	// Pourcentage max de diminution de l'attaque
 	const ATTAQUE_ALEATOIRE_MAX = 15;
+	const ATTAQUE_PILLAGE_MIN = 5;
+	const ATTAQUE_PILLAGE_MAX = 12;
 
 	/*
 	 * Dans la suite du jeu

@@ -12,6 +12,11 @@
 				echo 'Le ' . $rapport['dateAttaque'] . ' à ' . $rapport['heureAttaque'] . ' :<br>';
 				echo 'Attaque de <strong>' . $rapport['pseudoAttaquant'] . '</strong> avec ' . $rapport['nbPouletAttaquant'] . ' poulet' . ($rapport['nbPouletAttaquant'] > 1 ? 's' : '') . '.<br>' ;
 				echo 'Vous avez perdu ' . $rapport['nbPouletDefenseurPerdu'] . ' poulet' . ($rapport['nbPouletDefenseurPerdu'] > 1 ? 's' : '') . '.<br>' ;
+				if ($rapport['nbPouletDefenseurPerdu'] > 0) {
+					echo 'Vos ressources ont été pillées.<br>';
+				} else {
+					echo 'Aucune de vos ressources n\'a été pillée.<br>';
+				}
 				echo '<hr>';
 			}
 		} else {

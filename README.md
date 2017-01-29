@@ -1,5 +1,5 @@
 # Poulet Army :chicken:
-### Strategic mobile web game of chickens fighting - [Website](http://pouletarmy.arnaudlab.net/)
+### Strategic mobile web game of chickens fighting - [Website](https://pouletarmy.arnaudlab.net/)
 <hr>
 This is a personal project, more like a **sandbox** to test different programming architectures and different ways to do a thing.
 
