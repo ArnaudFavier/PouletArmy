@@ -7,9 +7,12 @@
 	<h2><strong>Poulet Army</strong></h2>
 	<br>
 	<h3>Arnaud Favier</h3>
-	<h3>2016</h3>
+	<br>
+	<h4>2016 - 2017</h4>
 	<br>
 	<h4>contact@arnaudlab.net</h4>
+	<br>
+	<a href="https://github.com/ArnaudFavier/PouletArmy" id="button-github" class="ui-btn ui-mini ui-shadow ui-corner-all centrer" target="_blank">GitHub</a>
 	<br>
 	<!-- All images remain property of their original owners. -->
 	<h5><i>Toutes les images sont la propriété de leurs auteurs d'origine.</i></h5>

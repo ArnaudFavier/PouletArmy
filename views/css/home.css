@@ -10,7 +10,7 @@ body {
 
 /* --- Home --- */
 #home-page {
-	background-image:url('../images/poulet_noel.png');
+	background-image:url('../images/poulet.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -58,6 +58,11 @@ body {
 	background: #00c6ff;
 	background: -webkit-linear-gradient(to bottom, #00c6ff , #0072ff);
 	background: linear-gradient(to bottom, #00c6ff , #0072ff);
+}
+
+/* --- About --- */
+#button-github {
+	width: 80px;
 }
 
 /* --- Other --- */
