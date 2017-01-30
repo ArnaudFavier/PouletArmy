@@ -35,6 +35,8 @@ CREATE TABLE IF NOT EXISTS `pa_rapport` (
   `nbPouletAttaquant` int(11) NOT NULL,
   `nbPouletDefenseurPerdu` int(11) NOT NULL,
   `lu` tinyint(1) NOT NULL,
+  `bois` int(11) NOT NULL,
+  `graine` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

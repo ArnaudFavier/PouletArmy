@@ -24,7 +24,7 @@ class Rapport {
 	/*
 	 * Insère un rapport en base de données
 	 */
-	public static function insert($dateAttaque, $idDefenseur, $idAttaquant, $nbPouletAttaquant, $nbPouletDefenseurPerdu) {
+	public static function insert($dateAttaque, $idDefenseur, $idAttaquant, $nbPouletAttaquant, $nbPouletDefenseurPerdu, $boisPille = 0, $grainePille = 0) {
 		// Compte le nombre de rapports du défenseur
 		$query = 'SELECT id FROM ' . Config::DB_TABLE_PREFIX . 'rapport WHERE idDefenseur=:idDefenseur ORDER BY dateAttaque ASC;';
 		$result = Database::select($query, [
@@ -48,14 +48,16 @@ class Rapport {
 		}
 
 		// Insertion du nouveau rapport
-		$query = 'INSERT INTO ' . Config::DB_TABLE_PREFIX . 'rapport (dateAttaque, idDefenseur, idAttaquant, nbPouletAttaquant, nbPouletDefenseurPerdu, lu) VALUES (:dateAttaque, :idDefenseur, :idAttaquant, :nbPouletAttaquant, :nbPouletDefenseurPerdu, :lu);';
+		$query = 'INSERT INTO ' . Config::DB_TABLE_PREFIX . 'rapport (dateAttaque, idDefenseur, idAttaquant, nbPouletAttaquant, nbPouletDefenseurPerdu, lu, bois, graine) VALUES (:dateAttaque, :idDefenseur, :idAttaquant, :nbPouletAttaquant, :nbPouletDefenseurPerdu, :lu, :bois, :graine);';
 		$result = Database::insert($query, [
 			[':dateAttaque', $dateAttaque, 'INT'],
 			[':idDefenseur', $idDefenseur, 'INT'],
 			[':idAttaquant', $idAttaquant, 'INT'],
 			[':nbPouletAttaquant', $nbPouletAttaquant, 'INT'],
 			[':nbPouletDefenseurPerdu', $nbPouletDefenseurPerdu, 'INT'],
-			[':lu', false, 'INT']
+			[':lu', false, 'INT'],
+			[':bois', $boisPille, 'INT'],
+			[':graine', $grainePille, 'INT']
 		]);
 	}
 

@@ -120,7 +120,7 @@ foreach ($pouletsDefenseurFin as $poulet) {
 
 /* Insertion du rapport en BDD pour le défenseur */
 // TODO : récupérer la date du rapport en la générant en timestamp (1997), et non en date et heure séparée
-Rapport::insert(time(), $joueurId, unserialize($_SESSION['user'])->id, $nombreTotal, $nombrePouletsDefenseurDebut - $nombrePouletsDefenseurFin);
+Rapport::insert(time(), $joueurId, unserialize($_SESSION['user'])->id, $nombreTotal, $nombrePouletsDefenseurDebut - $nombrePouletsDefenseurFin, $rapport['boisPille'], $rapport['grainePille']);
 
 /*
  |------------------------------

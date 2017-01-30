@@ -21,6 +21,8 @@ if (!empty($rapports)) {
 		$rapportFormate['pseudoAttaquant'] = User::getInformations($rapport['idAttaquant'])['pseudo'];
 		$rapportFormate['nbPouletAttaquant'] = $rapport['nbPouletAttaquant'];
 		$rapportFormate['nbPouletDefenseurPerdu'] = $rapport['nbPouletDefenseurPerdu'];
+		$rapportFormate['bois'] = $rapport['bois'];
+		$rapportFormate['graine'] = $rapport['graine'];
 
 		array_push($listeRapports, $rapportFormate);
 	}

@@ -331,9 +331,15 @@ class Attaque {
 			// Attaquant
 			$rapport['vainqueur'] = User::getInformations($idAttaquant)['pseudo'];
 			$ressourcesPilles = Attaque::pillageRessources($idAttaquant, $idDefenseur);
-			$rapport['message'] .= '<br><br>Des ressources ont été pillées :';
-			$rapport['message'] .= '<br><strong>' . $ressourcesPilles['boisPille'] . '</strong> bois et <strong>' . $ressourcesPilles['grainePille'] . '</strong> graine' . ($ressourcesPilles['grainePille'] > 1 ? 's' : '') . '.';
-			Ressource::getIntoSession();
+			if ($ressourcesPilles['boisPille'] > 0 || $ressourcesPilles['grainePille'] > 0) {
+				$rapport['message'] .= '<br><br>Des ressources ont été pillées :';
+				$rapport['message'] .= '<br><strong>' . $ressourcesPilles['boisPille'] . '</strong> bois et <strong>' . $ressourcesPilles['grainePille'] . '</strong> graine' . ($ressourcesPilles['grainePille'] > 1 ? 's' : '') . '.';
+				Ressource::getIntoSession();
+			} else {
+				$rapport['message'] .= '<br><br>Pas de ressources pillées.';
+			}
+			$rapport['boisPille'] = $ressourcesPilles['boisPille'];
+			$rapport['grainePille'] = $ressourcesPilles['grainePille'];
 		} elseif ($nombrePouletsMortsAttaquant == $nombrePouletsMortsDefenseur) {
 			// Egalité
 			$rapport['vainqueur'] = 'Pas de vainqueur, les pertes sont identiques.';
