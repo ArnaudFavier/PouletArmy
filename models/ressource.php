@@ -71,7 +71,7 @@ class Ressource {
 	 * Récupère et retourne les ressources du joueur passé en paramètre
 	 */
 	public static function get($idUser) {
-		$query = 'SELECT bois, scierie, depot, graine, champs, entrepot, `or` FROM ' . Config::DB_TABLE_PREFIX . 'ressource WHERE idUser=:idUser;';
+		$query = 'SELECT bois, scierie, depot, graine, champs, entrepot, `or`, comptoir FROM ' . Config::DB_TABLE_PREFIX . 'ressource WHERE idUser=:idUser;';
 		$result = Database::select($query, [
 			[':idUser', $idUser, 'INT']
 		]);
@@ -93,6 +93,8 @@ class Ressource {
 		$_SESSION['ressource']['depot'] = $ressource['depot'];
 		$_SESSION['ressource']['champs'] = $ressource['champs'];
 		$_SESSION['ressource']['entrepot'] = $ressource['entrepot'];
+
+		$_SESSION['ressource']['comptoir'] = $ressource['comptoir'];
 
 		$_SESSION['ressource']['boisMax'] = Rules::boisMaximum($ressource['depot']);
 		$_SESSION['ressource']['graineMax'] = Rules::graineMaximum($ressource['entrepot']);

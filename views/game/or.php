@@ -13,7 +13,8 @@
 			echo '<a href="comptoir-construire" class="ui-btn ui-corner-all ui-btn-inline ui-icon-arrow-u-r ui-btn-icon-left">Construire</a><br>';
 			echo 'Coût : <strong>' . $view['comptoir']['coutConstruction'] . '</strong> bois';
 		} else {
-			echo '<br><p>Voulez-vous échanger <strong>' . $view['comptoir']['coutEchange'] . '</strong> bois contre <strong>' . $view['comptoir']['gainOr'] . '</strong> or ?</p>';
+			echo '<br><p>Voulez-vous échanger<br>';
+			echo '<strong>' . $view['comptoir']['coutEchange'] . '</strong> bois contre <strong>' . $view['comptoir']['gainOr'] . '</strong> or ?</p>';
 			echo '<a href="comptoir-echanger" class="ui-btn ui-corner-all ui-btn-inline ui-icon-recycle ui-btn-icon-left game-bouton-jaune">Echanger</a><br>';
 		}
 	?>

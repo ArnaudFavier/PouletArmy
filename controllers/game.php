@@ -18,9 +18,9 @@ $boisHeure = floor(Rules::boisSeconde($_SESSION['ressource']['scierie']) * 3600)
 $graineHeure = floor(Rules::graineSeconde($_SESSION['ressource']['champs']) * 3600);
 
 /* Image du village en fonction du niveau des batiments construits */
-if($_SESSION['ressource']['scierie'] >= 10 && $_SESSION['ressource']['champs'] >= 5) {
+if($_SESSION['ressource']['scierie'] >= 20 && $_SESSION['ressource']['champs'] >= 10 && $_SESSION['ressource']['comptoir'] >= 1) {
 	$chateauNiveau = 3;
-} elseif($_SESSION['ressource']['scierie'] >= 5 && $_SESSION['ressource']['champs'] >= 1) {
+} elseif($_SESSION['ressource']['scierie'] >= 10 && $_SESSION['ressource']['champs'] >= 3) {
 	$chateauNiveau = 2;
 } elseif($_SESSION['ressource']['scierie'] >= 3) {
 	$chateauNiveau = 1;
