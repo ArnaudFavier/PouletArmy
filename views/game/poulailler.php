@@ -6,6 +6,7 @@
 	<h2>Poulailler</h2>
 	<h6>Le poulailler permet de recruter des poulets dans l'armée.</h6>
 	<img src="views/images/buildings/poulailler.png" alt="Poulailler">
+	<br>
 	<?php
 		// Si le poulailler n'est pas construit, affichage du bouton de construction, sinon affichage de la liste des poulets
 		if ($view['poulailler']['niveau'] == 0) {
@@ -13,7 +14,7 @@
 			echo '<a href="poulailler-construire" class="ui-btn ui-corner-all ui-btn-inline ui-icon-arrow-u-r ui-btn-icon-left">Construire</a><br>';
 			echo 'Coût : <strong>' . $view['poulailler']['cout'] . '</strong> bois';
 		} else {
-			echo '<br><br><p>Choisissez le nombre de poulets à recruter :</p>';
+			echo '<br><p>Choisissez le nombre de poulets à recruter :</p>';
 			echo '<br>';
 			echo '<form id="game-poulailler-formulaire" action="poulet-recruter" method="POST">';
 				echo '<table class="table">';

@@ -111,10 +111,14 @@ class Ressource {
 		$query = 'UPDATE ' . Config::DB_TABLE_PREFIX . 'ressource SET ';
 		$compte = 1; // Pour que la syntaxe de la requête soit correcte, il ne faut pas de virgule après le dernier attribut
 		foreach ($nouvellesRessources as $cle => $valeur) {
-			$nomBinding = ':' . $cle;
+			if (strpos($cle, '`') !== false) { // Echapement du caractère ` si contenu dans la clé (`or`)
+				$nomBinding = ':_' . str_replace('`', '', $cle);
+			} else {
+				$nomBinding = ':' . $cle;
+			}
 			$query .= $cle . '=' . $nomBinding;
 			
-			if($compte < count($nouvellesRessources)) {
+			if ($compte < count($nouvellesRessources)) {
 				$query .= ', ';
 			} else {
 				$query .= ' ';
@@ -128,6 +132,19 @@ class Ressource {
 
 		/* Modification en base de donnée */
 		$result = Database::update($query, $bindingFinal);
+	}
+
+	/*
+	 * Retourne le niveau du comptoir du joueur $idUser
+	 */
+	public static function getComptoir($idUser) {
+		$query = 'SELECT comptoir FROM ' . Config::DB_TABLE_PREFIX . 'ressource WHERE idUser=:idUser;';
+		$result = Database::select($query, [
+			[':idUser', $idUser, 'INT']
+		]);
+
+		// Retourne le niveau du comptoir
+		return $result['comptoir'];
 	}
 	
 }

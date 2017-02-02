@@ -28,6 +28,11 @@
 			<td><a href="graine" class="ui-btn ui-corner-all ui-icon-carat-r ui-btn-icon-notext bouton-sans-marge">&gt;</a></td>
 		</tr>
 		<tr>
+			<td onclick="$.mobile.changePage('or');">Comptoir</td>
+			<td colspan="2" onclick="$.mobile.changePage('or');"><?php echo $_SESSION['ressource']['or']; ?> Or</td>
+			<td><a href="or" class="ui-btn ui-corner-all ui-icon-carat-r ui-btn-icon-notext bouton-sans-marge">&gt;</a></td>
+		</tr>
+		<tr>
 			<td></td>
 			<td></td>
 			<td></td>

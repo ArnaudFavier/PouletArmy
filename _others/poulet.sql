@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS `pa_ressource` (
   `or` float NOT NULL,
   `poulailler` int(11) NOT NULL,
   `laboratoire` int(11) NOT NULL,
+  `comptoir` int(11) NOT NULL,
   UNIQUE KEY `FK_IDUSER_USERS.ID` (`idUser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

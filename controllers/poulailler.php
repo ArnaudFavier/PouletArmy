@@ -18,7 +18,7 @@ $poulailler['niveau'] = Poulet::getPoulailler(unserialize($_SESSION['user'])->id
 
 // Si le poulailler a été construit
 if ($poulailler['niveau'] == 0) {
-	$poulailler['cout'] = Tools::formatNumber(Rules::COUT_POULAILLER);
+	$poulailler['cout'] = Tools::formatNumber(Rules::COUT_POULAILLER_CONSTRUCTION);
 } else {
 	/* Récupération de la liste des poulets avec les quantités possédées correspondantes */
 	$listePoulets = Poulet::getAllWithArmy(unserialize($_SESSION['user'])->id);

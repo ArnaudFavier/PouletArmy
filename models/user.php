@@ -91,7 +91,7 @@ class User {
 			$idUser = $result['id'];
 
 			/* Ressource */
-			$query = 'INSERT INTO ' . Config::DB_TABLE_PREFIX . 'ressource (idUser, lastUpdate, bois, scierie, depot, graine, champs, entrepot, `or`, poulailler, laboratoire) VALUES (:idUser, :lastUpdate, :bois, :scierie, :depot, :graine, :champs, :entrepot, :_or, :poulailler, :laboratoire);';
+			$query = 'INSERT INTO ' . Config::DB_TABLE_PREFIX . 'ressource (idUser, lastUpdate, bois, scierie, depot, graine, champs, entrepot, `or`, poulailler, laboratoire, comptoir) VALUES (:idUser, :lastUpdate, :bois, :scierie, :depot, :graine, :champs, :entrepot, :_or, :poulailler, :laboratoire, :comptoir);';
 			$result = Database::insert($query, [
 				[':idUser', $idUser, 'INT'],
 				[':lastUpdate', time(), 'INT'],
@@ -103,7 +103,8 @@ class User {
 				[':entrepot', Rules::DEPART_ENTREPOT, 'STR'],
 				[':_or', Rules::DEPART_OR, 'STR'],
 				[':poulailler', Rules::DEPART_POULAILLER, 'STR'],
-				[':laboratoire', Rules::DEPART_LABORATOIRE, 'STR']
+				[':laboratoire', Rules::DEPART_LABORATOIRE, 'STR'],
+				[':comptoir', Rules::DEPART_COMPTOIR, 'STR']
 			]);
 
 			if ($result == false) {

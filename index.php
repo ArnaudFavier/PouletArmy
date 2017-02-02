@@ -79,6 +79,12 @@ if(isset($_SERVER['REQUEST_METHOD'])) {
 			case 'entrepot-ameliorer':
 				require_once('actions/entrepot-ameliorer.php');
 				break;
+			case 'comptoir-construire':
+				require_once('actions/comptoir-construire.php');
+				break;
+			case 'comptoir-echanger':
+				require_once('actions/comptoir-echanger.php');
+				break;
 			case 'poulailler-construire':
 				require_once('actions/poulailler-construire.php');
 				break;

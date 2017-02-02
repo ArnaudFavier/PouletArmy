@@ -13,10 +13,10 @@ if ($poulailler > 0) {
 	Tools::message(Tools::TYPE_MESSAGE['Error'], 'Poulailler déjà construit.', 'poulailler');
 } else {
 	// S'il y a suffisament de bois pour la construction
-	if ($_SESSION['ressource']['bois'] >= Rules::COUT_POULAILLER) {
+	if ($_SESSION['ressource']['bois'] >= Rules::COUT_POULAILLER_CONSTRUCTION) {
 		// Tableau contenant les nouvelles valeurs des ressources et bâtiments
 		$nouvellesRessources = array(
-			'bois' => $_SESSION['ressource']['bois'] - Rules::COUT_POULAILLER,
+			'bois' => $_SESSION['ressource']['bois'] - Rules::COUT_POULAILLER_CONSTRUCTION,
 			'poulailler' => 1
 		);
 

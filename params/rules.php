@@ -31,6 +31,7 @@ class Rules {
 	const DEPART_ENTREPOT = 0;
 	const DEPART_POULAILLER = 0;
 	const DEPART_LABORATOIRE = 0;
+	const DEPART_COMPTOIR = 0;
 
 	/* Attaque */
 	// Pourcentage max de diminution de l'attaque
@@ -51,8 +52,11 @@ class Rules {
 	const MAX_CHAMPS = 30; /* MAX : 30 */
 	const MAX_ENTREPOT = 30; /* MAX : 30 */
 
-	/* Coûts des batiments */
-	const COUT_POULAILLER = 500; // Bois
+	/* Coûts et gains des batiments */
+	const COUT_POULAILLER_CONSTRUCTION = 500; // Bois
+	const COUT_COMPTOIR_CONSTRUCTION = 15500; // Bois
+	const COUT_COMPTOIR_ECHANGE = 15000; // Bois
+	const GAIN_COMPTOIR = 1; // Or
 
 	/*
 	 |------------------------------
