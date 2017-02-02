@@ -6,6 +6,7 @@ require_once('connected.php');
 require_once('params/rules.php');
 require_once('models/rapport.php');
 require_once('models/user.php');
+require_once('utils/tools.php');
 
 // Récupération des rapports bruts
 $rapports = Rapport::getAll(unserialize($_SESSION['user'])->id);
@@ -21,8 +22,8 @@ if (!empty($rapports)) {
 		$rapportFormate['pseudoAttaquant'] = User::getInformations($rapport['idAttaquant'])['pseudo'];
 		$rapportFormate['nbPouletAttaquant'] = $rapport['nbPouletAttaquant'];
 		$rapportFormate['nbPouletDefenseurPerdu'] = $rapport['nbPouletDefenseurPerdu'];
-		$rapportFormate['bois'] = $rapport['bois'];
-		$rapportFormate['graine'] = $rapport['graine'];
+		$rapportFormate['bois'] = Tools::formatNumber($rapport['bois']);
+		$rapportFormate['graine'] = Tools::formatNumber($rapport['graine']);
 
 		array_push($listeRapports, $rapportFormate);
 	}
@@ -33,10 +34,8 @@ if (!empty($rapports)) {
  | Affectation des variables d'affichage
  |------------------------------
  */
-
 $view = array(
 	'nombreRapportMax' => Rules::NB_RAPPORT,
-
 	'listeRapports' => $listeRapports,
 );
 
