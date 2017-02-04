@@ -225,8 +225,28 @@ class User {
 	 * ayant le plus de points, par ordre décroissant, suivant le numéro de
 	 * page $page passé en paramètre.
 	 */
-	public static function getClassement($page = 0) {
+	public static function getClassementPoints($page = 0) {
 		$query = 'SELECT pseudo, point FROM ' . Config::DB_TABLE_PREFIX . 'user ORDER BY point DESC LIMIT :offset, :limite;';
+		$result = Database::select($query, [
+			[':offset', $page * Rules::NB_JOUEUR_PAGE, 'INT'],
+			[':limite', Rules::NB_JOUEUR_PAGE, 'INT']
+		]);
+
+		// Vérifie s'il n'y a eu qu'un seul résultat
+		if (!empty($result) && !is_array($result[0])) {
+			$result = array($result);
+		}
+
+		return $result;
+	}
+
+	/*
+	 * Retourne le classement du nombre "Rules::NB_JOUEUR_PAGE" de joueurs
+	 * ayant le plus d'or, par ordre décroissant, suivant le numéro de
+	 * page $page passé en paramètre.
+	 */
+	public static function getClassementOr($page = 0) {
+		$query = 'SELECT pseudo, `or` FROM ' . Config::DB_TABLE_PREFIX . 'user u INNER JOIN ' . Config::DB_TABLE_PREFIX . 'ressource r ON u.id=r.idUser ORDER BY `or` DESC LIMIT :offset, :limite;';
 		$result = Database::select($query, [
 			[':offset', $page * Rules::NB_JOUEUR_PAGE, 'INT'],
 			[':limite', Rules::NB_JOUEUR_PAGE, 'INT']

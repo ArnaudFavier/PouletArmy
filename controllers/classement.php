@@ -5,14 +5,17 @@ $title = 'Classement';
 require_once('connected.php');
 require_once('models/user.php');
 
-$classement = User::getClassement();
+$classementPoints = User::getClassementPoints();
+$classementOr = User::getClassementOr();
 
 /*
  |------------------------------
  | Affectation des variables d'affichage
  |------------------------------
  */
-
-$view['classement'] = $classement;
+$view = array(
+	'classementPoints' => $classementPoints,
+	'classementOr' => $classementOr,
+);
 
 require_once('views/game/classement.php');

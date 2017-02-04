@@ -136,6 +136,15 @@ a.normal {
 	max-width: 145px;
 	word-wrap: break-word;
 }
+#flip-classement .ui-flipswitch {
+	float: none;
+}
+#flip-classement label {
+	width: 0;
+}
+#game-classement .ui-flipswitch .ui-flipswitch-off {
+	text-indent: 0.2em;
+}
 
 /* --- Game [Mission] --- */
 #game-mission-titre {
