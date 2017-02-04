@@ -11,7 +11,7 @@
 		// Si le poulailler n'est pas construit, affichage du bouton de construction, sinon affichage de la liste des poulets
 		if ($view['poulailler']['niveau'] == 0) {
 			echo '<br>';
-			echo '<a href="poulailler-construire" class="ui-btn ui-corner-all ui-btn-inline ui-icon-arrow-u-r ui-btn-icon-left">Construire</a><br>';
+			echo '<a href="poulailler-construire" class="ui-btn ui-corner-all ui-btn-inline ui-icon-arrow-u-r ui-btn-icon-left game-bouton-marron">Construire</a><br>';
 			echo 'Coût : <strong>' . $view['poulailler']['cout'] . '</strong> bois';
 		} else {
 			echo '<br><p>Choisissez le nombre de poulets à recruter :</p>';

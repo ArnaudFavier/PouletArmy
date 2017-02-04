@@ -50,36 +50,37 @@ a.normal {
 	background: -webkit-linear-gradient(to top, #FF512F , #F09819);
 	background: linear-gradient(to top, #FF512F , #F09819);
 }
-
 .game-bouton-violet {
 	background: #9733EE;
 	background: -webkit-linear-gradient(to top, #9733EE , #DA22FF);
 	background: linear-gradient(to top, #9733EE , #DA22FF);
 }
-
 .game-bouton-gris {
 	background: #4CA1AF;
 	background: -webkit-linear-gradient(to top, #4CA1AF , #C4E0E5);
 	background: linear-gradient(to top, #4CA1AF , #C4E0E5);
 }
-
 .game-bouton-jaune {
 	background: #ffb347;
 	background: -webkit-linear-gradient(to top, #ffb347 , #ffcc33);
 	background: linear-gradient(to top, #ffb347 , #ffcc33);    
 }
-
 .game-bouton-bleu {
 	background: #00c6ff;
 	background: -webkit-linear-gradient(to top, #0072ff, #00c6ff);
 	background: linear-gradient(to top, #0072ff , #00c6ff);             
 }
-
+.game-bouton-marron {
+	background: #cd853f;
+	background: -webkit-linear-gradient(to top, #d2691e , #cd853f);
+	background: linear-gradient(to top, #d2691e ,#cd853f);
+}	
 .ui-btn.game-bouton-orange,
 .ui-btn.game-bouton-violet,
 .ui-btn.game-bouton-gris,
 .ui-btn.game-bouton-jaune,
-.ui-btn.game-bouton-bleu {
+.ui-btn.game-bouton-bleu,
+.ui-btn.game-bouton-marron {
 	text-shadow: initial;
 }
 
@@ -98,6 +99,16 @@ a.normal {
 	width: 48%;
 	float: right;
 	margin-left: 5px;
+}
+
+#game-main .game-menu-td-image {
+	padding: 0;
+}
+#game-main .game-menu-image {
+	margin-top: 2px;
+	margin-left: 10px;
+	width: 40px;
+	height: 40px;
 }
 
 /* --- Game [Poulailler] --- */
@@ -132,10 +143,12 @@ a.normal {
 #game-classement-position-3 {
 	font-size: 125%;
 }
+
 .game-classement-pseudo {
 	max-width: 145px;
 	word-wrap: break-word;
 }
+
 #flip-classement .ui-flipswitch {
 	float: none;
 }

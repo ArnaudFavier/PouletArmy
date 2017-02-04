@@ -10,7 +10,7 @@
 	<?php
 		if ($view['comptoir']['niveau'] == 0) {
 			echo '<br>';
-			echo '<a href="comptoir-construire" class="ui-btn ui-corner-all ui-btn-inline ui-icon-arrow-u-r ui-btn-icon-left">Construire</a><br>';
+			echo '<a href="comptoir-construire" class="ui-btn ui-corner-all ui-btn-inline ui-icon-arrow-u-r ui-btn-icon-left game-bouton-marron">Construire</a><br>';
 			echo 'Coût : <strong>' . $view['comptoir']['coutConstruction'] . '</strong> bois';
 		} else {
 			echo '<br><p>Voulez-vous échanger<br>';
