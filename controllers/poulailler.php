@@ -54,8 +54,8 @@ if ($poulailler['niveau'] == 0) {
  | Affectation des variables d'affichage
  |------------------------------
  */
- $view = array(
- 	'poulailler' => $poulailler,
+$view = array(
+	'poulailler' => $poulailler,
 	'poulets' => $listePoulets,
 );
 

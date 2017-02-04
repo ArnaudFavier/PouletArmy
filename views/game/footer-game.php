@@ -7,7 +7,7 @@
 		</div><!-- div footer -->
 
 		<!-- JavaScript dans la page pour être rechargé à chaque changement de page -->
-		<script type="text/javascript">
+		<script>
 			$.mobile.changePage.defaults.reloadPage = true;
 
 			var bois = <?php echo $_SESSION['ressource']['bois']; ?>;
