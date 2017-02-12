@@ -12,6 +12,7 @@
 				<option selected="">Points</option>
 				<option>Or</option>
 			</select>
+			<br><span id="game-classement-flip-arrow-right">→</span><span id="game-classement-flip-arrow-left" style="display: none;">←</span>
 		</div>
 	</form>
 	<br>
@@ -32,10 +33,14 @@
 	$('#flip-classement-checkbox').on('change', function() {
 		if($(this)[0].selectedIndex == 1) {
 			$('#game-classement-points').hide();
+			$('#game-classement-flip-arrow-right').hide();
 			$('#game-classement-or').show();
+			$('#game-classement-flip-arrow-left').show();
 		} else {
 			$('#game-classement-or').hide();
+			$('#game-classement-flip-arrow-left').hide();
 			$('#game-classement-points').show();
+			$('#game-classement-flip-arrow-right').show();
 		}
 	});
 </script>

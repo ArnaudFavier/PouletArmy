@@ -38,7 +38,7 @@
 	</form>
 </div>
 
-<div class="alert alert-warning" role="alert">Nouveauté : le comptoir et l'or.</div>
+<div class="alert alert-warning" role="alert">Nouveautés : le comptoir et l'or.</div>
 
 <div id="home-description" class="panel panel-default">
 	<div class="panel-body">

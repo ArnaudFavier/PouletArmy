@@ -149,8 +149,22 @@ a.normal {
 	word-wrap: break-word;
 }
 
+#flip-classement {
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+}
 #flip-classement .ui-flipswitch {
 	float: none;
+}
+#game-classement-flip-arrow-right {
+	float: left;
+	margin-left: 8px;
+}
+#game-classement-flip-arrow-left {
+	float: right;
+	margin-right: 8px;
 }
 #flip-classement label {
 	width: 0;
