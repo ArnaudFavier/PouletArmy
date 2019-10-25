@@ -4,7 +4,7 @@
 
 <div id="game-classement">
 	<h2>Classement</h2>
-	<h6>Le classement général des 100 meilleurs joueurs de <strong>Poulet Army</strong>.</h6>
+	<h6>Le classement général des 300 meilleurs joueurs de <strong>Poulet Army</strong>.</h6>
 	<form>
 		<div id="flip-classement" data-role="fieldcontain">
 			<label for="flip-classement-checkbox"></label>

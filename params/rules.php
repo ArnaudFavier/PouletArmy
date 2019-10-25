@@ -73,7 +73,7 @@ class Rules {
 	const SECURITY_INSCRIPTION_MAX = 3;
 
 	/* Classement */
-	const NB_JOUEUR_PAGE = 100;
+	const NB_JOUEUR_PAGE = 300;
 
 	/* Rapport */
 	const NB_RAPPORT = 10;
