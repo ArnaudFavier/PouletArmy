@@ -10,8 +10,6 @@
 	<br>
 	<h4>2016 - 2017</h4>
 	<br>
-	<h4>contact@arnaudlab.net</h4>
-	<br>
 	<a href="https://github.com/ArnaudFavier/PouletArmy" id="button-github" class="ui-btn ui-mini ui-shadow ui-corner-all centrer" target="_blank">GitHub</a>
 	<br>
 	<!-- All images remain property of their original owners. -->
