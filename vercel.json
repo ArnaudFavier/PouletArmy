@@ -1,0 +1,14 @@
+{
+	"regions": ["cdg1"],
+	"functions": {
+		"api/index.php": {
+			"runtime": "vercel-php@0.9.0"
+		}
+	},
+	"routes": [
+		{ "src": "/views/(css|js|fonts|images)/(.*)", "dest": "/views/$1/$2" },
+		{ "src": "/views/manifest.json", "dest": "/views/manifest.json" },
+		{ "src": "/robots.txt", "dest": "/robots.txt" },
+		{ "src": "/(.*)", "dest": "/api/index.php?url=$1" }
+	]
+}

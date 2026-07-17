@@ -57,6 +57,15 @@ CREATE TABLE IF NOT EXISTS `pa_ressource` (
   UNIQUE KEY `FK_IDUSER_USERS.ID` (`idUser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+DROP TABLE IF EXISTS `pa_session`;
+CREATE TABLE IF NOT EXISTS `pa_session` (
+  `id` varchar(128) NOT NULL,
+  `data` blob NOT NULL,
+  `last_activity` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_LAST_ACTIVITY` (`last_activity`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 DROP TABLE IF EXISTS `pa_user`;
 CREATE TABLE IF NOT EXISTS `pa_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

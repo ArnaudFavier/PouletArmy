@@ -1,4 +1,6 @@
 <?php
+require_once('utils/session-handler.php');
+session_set_save_handler(new DbSessionHandler(), true);
 session_start();
 
 /*

@@ -21,7 +21,7 @@ class Tools {
 	  * Crypte un mot de passe avec le sel en Config
 	  */
 	 public static function cryptPassword($password) {
-	 	$password = $password . Config::PASSWORD_SALT;
+	 	$password = $password . (getenv('PASSWORD_SALT') ?: Config::PASSWORD_SALT);
 	 	$password = hash('sha256', $password);
 
 	 	return $password;

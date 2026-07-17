@@ -39,7 +39,7 @@ class Rapport {
 		}
 
 		// Plus de rapport que le maximum prévu ? Suppression en base de données
-		while (count($result) >= Rules::NB_RAPPORT) { // >= car on ajoute un nouveau rapport ensuite
+		while ($result !== null && count($result) >= Rules::NB_RAPPORT) { // >= car on ajoute un nouveau rapport ensuite ($result null est fatal en PHP 8)
 			$query = 'DELETE FROM ' . Config::DB_TABLE_PREFIX . 'rapport WHERE id=:id;';
 			Database::delete($query, [
 				[':id', $result[0]['id'], 'INT']
